@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+p{
+	line-height: 25px;
+}
+.navbar{
+	margin: 0;
+	position: relative;
+	overflow: auto;
+}
+
+.navbar > ul{
+	list-style-type: none;
+	margin: 0 auto;
+	left : 0;
+	/*top: 0;
+	bottom: 0;*/
+	position: fixed;
+	background-color: #3498db;
+	padding: 15% 0 15% 0;
+	overflow: auto;
+	width: 13%;
+}
+.navbar > li{
+	/*border: 1px solid;*/
+	width: 100%;
+}
+.navbar li a{
+	display: block;
+	color: white;
+	text-align: right;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-size: 100%;
+}
+#navbar-content{
+	z-index: 1;
+}
+#navbar-content li a:hover{
+	background-color: #2980bb;
+}
+#navbar-content li a.active{
+	background-color: #2980bb;
+	border-right: 4px solid white;
+	box-shadow: 1px 1px -5px gray;
+}
+.contact{
+	height: 100%;
+	position: absolute;
+	border: 1px solid pink;
+	z-index: 100;
+	float: left
+	padding: 0;
+	width: 13%;
+}
+
+#contact-side ul{
+	list-style-type: none;
+	bottom: 0 !important;
+	left: 0;
+	right: 0;
+	bottom: 5% !important;
+	margin: 0 auto !important;
+	/*padding: 0;*/
+	position: fixed;
+}
+
+#contact-side li{
+	float: left !important;
+	margin: 2px auto !important;
+	padding: 0 !important;
+}
+#contact-side li a{
+	text-align: center !important; 
+	padding: 3px !important;
+	margin: 3px !important;
+	font-size: 125%;
+	display: block;
+}
+
+#contact-side li a:hover{
+	color: #bdc3c7;
+	text-shadow: 1 1 5px grey;
+}
+
+#copyr{
+	bottom: 0; 
+	position: fixed; 
+	background-color: #3498db; 
+	z-index: 20;
+	width: 13%; 
+	color: white;
+	display: block;
+	border-top: 3px solid #3498db;
+	/*padding-bottom: 1%;*/
+	font-size: 0.8em;
+	text-align: center;
+}
+.section{
+	min-height: 100vh;
+	margin-left: 13%;
+	overflow: auto;
+	/*border: 1px solid #3498db;*/
+	padding: 5% 10%;
+}
+#home{
+	padding: 0 3% !important;
+}
+#home-title{
+	text-align: center;
+	font-size: 1.5em;
+	color: #2c3e50;
+	text-shadow: 1px 1px 5px grey;
+	margin-top: 0;
+}
+
+#prof-image img{
+	display: block;
+	margin: 0 auto;
+	left: 13%;
+	right: 0;
+	bottom: 0;
+	margin-bottom: 0;
+	padding: 0;
+	position: absolute;
+	max-height: : 40vh;
+	min-height: 30vh;
+	width: : auto;
+}
+.inner-title{
+	border-bottom: 1px solid; 
+	font-size: 2em; 
+	padding-bottom: 20px;
+}
+.inner-content{
+	margin-top: 33px !important;
+	width: 100%;
+}
+
+#about-skill ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 3% 0 0 0;
+	width: 100%;
+}
+
+#skill-outer > li{
+	float: left;
+	display: block;
+	width: 50%;
+}
+
+.bar-out, .bar-in{
+	display: block;
+	border-radius: 16px;
+}
+
+.bar-out{
+	padding: 0 !important;
+	background-color: #ECEFF1;
+	width: 65%;
+	margin : 2% 0 !important;
+}
+
+.bar-in{
+	background-color: #3498db;
+	text-align: right;
+	color: white;
+	padding-right: 5%;
+}
+
+.skill-name{
+	width: 10%;
+	margin : 2% 0 !important;
+}
+
+.track{
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 33px !important;
+}
+
+.track::after{
+	content: '';
+	position: absolute;
+	width: 6px;
+	background-color: #2980bb;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3px;
+}
+
+.balloon{
+	padding: 10px 40px;
+	position: relative;
+	/*background-color: #3498db;*/
+	width: 50% !important;
+}
+
+.balloon::after{
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: -15px;
+	background-color: white;
+	border: 4px solid #1abc9c;
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+.left{
+	left:0;
+}
+
+.right{
+	left: 50%;
+}
+
+.left::before, .right:before{
+	content: " ";
+	height: 0;
+	position: absolute;
+	top: 20px;
+	width: 0;
+	z-index: 1;
+	border: medium solid #4DB6AC;
+}
+
+.left::before{
+	right: 30px;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent #4DB6AC;
+}
+
+.right::before{
+	left: 30px;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #4DB6AC transparent transparent;
+}
+
+.right::after{
+	left: -14px;
+}
+
+.balloon-content{
+	padding: 20px 30px !important;
+	background-color: #4DB6AC;
+	position: relative !important;
+	border-radius: 6px !important;	
+	color: white;
+}
+
+.balloon-title{
+	font-size: 1.2em;
+}
+
+.balloon-year{
+	font-size: 1.05em;
+}

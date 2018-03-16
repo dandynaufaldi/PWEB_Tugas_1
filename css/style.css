@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #555;
+	width: 100%;
+	top: 0;
+	box-shadow: 10px 0 10px grey;
+	position: fixed;
+	margin-bottom: 2.2em;
+}
+
+.navbar li{
+	float:left;
+}
+
+@media screen and (max-width: 600px){
+	.navbar li{
+		float: none;
+	}
+}
+
+.navbar li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 0.6em 1em;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.navbar li a:hover, .active{
+	background-color: #111;
+}
+
+.section{
+	height: 100vh;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+}
+
+/*Beri space untuk fixed top navbar*/
+.jump::before {
+  content:" ";
+  display:inline-block;
+  height:2.2em; 
+  margin-top:-2.2em; 
+}
+#bio{
+	background-color: blue;
+}
+#education{
+	background-color: grey;
+}
+
+div:taret{
+	padding-top: 2.2em;
+	margin-top: -2.2em;
+}
