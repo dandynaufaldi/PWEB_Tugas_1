@@ -50,6 +50,16 @@ p{
 	border-right: 4px solid white;
 	box-shadow: 1px 1px -5px gray;
 }
+
+.navbar li a#nav-gabut{
+	color: #3498db ;
+}
+.navbar li a#nav-gabut:hover{
+	color: white !important;
+}
+.navbar li a#nav-gabut.active{
+	color : white !important;
+}
 .contact{
 	height: 100%;
 	position: absolute;
@@ -321,4 +331,10 @@ p{
 	overflow: auto;
 	top: 50%;
 	left: 50%;
+}
+
+#canvas{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 100%; 
+	height: 100%;
 }
