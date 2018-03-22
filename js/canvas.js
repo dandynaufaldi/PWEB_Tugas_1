@@ -3,6 +3,7 @@ var mouse = {
 	y : undefined
 }
 var mycanvas = document.getElementById("canvas");
+var clearbutton = document.getElementById("clear-button");
 // mycanvas.addEventListener("click", function(event){
 // 	mouse.x = event.x - window.innerWidth*0.23;
 // 	mouse.y = event.y - window.innerHeight*0.05;
@@ -23,9 +24,21 @@ var myGameArea = {
 		this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
 	}
 }
-
+var cir_arr = [];
+if (localStorage){
+	var data = JSON.parse(localStorage.getItem('circleObj'));
+	for (var i = data.length - 1; i >= 0; i--) {
+		var temp = new Circle(data[i]['x'], data[i]['y'], data[i]['color']);
+		temp.size = data[i]['size'];
+		temp.color = data[i]['color'];
+		temp.xDir = data[i]['xDir'];
+		temp.yDir = data[i]['yDir'];
+		cir_arr.push(temp);
+	}
+	console.log('load localStorage');
+}
 var circles = {
-	arr : [],
+	arr : cir_arr,
 	update : function(){
 		for (var i = this.arr.length - 1; i >= 0; i--) {
 			for (var j = this.arr.length - 1; j >= 0; j--) {
@@ -45,6 +58,13 @@ var circles = {
 		}
 	}
 }
+
+clearbutton.addEventListener("click", function(e) {
+	while(circles.arr.length > 0){
+		circles.arr.pop();
+	}
+	localStorage.clear();
+});
 
 mycanvas.addEventListener("click", function(e){
 	var temp = mycanvas.getBoundingClientRect();
@@ -150,6 +170,8 @@ function updateGameArea(){
 	myGameArea.clear();
 	circles.update();
 	// console.log('update');
+	//Update local
+	localStorage.setItem('circleObj', JSON.stringify(circles.arr));
 }
 
 
